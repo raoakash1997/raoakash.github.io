@@ -1,0 +1,45 @@
+/* --- Light mode overrides --- */
+:root {
+  --primary-color: #0097a7;              /* teal/blue */
+  --primary-color-light: #33b7c7;
+  --primary-color-dark: #006978;
+
+  --global-bg-color: #ffffff;
+  --global-text-color: #111111;
+
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-color-dark);
+
+  --navbar-bg-color: #ffffff;
+  --navbar-text-color: #111111;
+
+  --footer-bg-color: #ffffff;
+  --footer-text-color: #111111;
+
+  --button-bg-color: var(--primary-color);
+  --button-text-color: #ffffff;
+}
+
+/* --- Dark mode overrides --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --global-bg-color: #0e1111;         /* deep graphite */
+    --global-text-color: #e6f7f8;       /* pale aqua text */
+    
+    --primary-color: #66e1d3;           /* brighter turquoise in dark mode */
+    --primary-color-light: #8ff5e9;
+    --primary-color-dark: #39b7ac;
+
+    --link-color: var(--primary-color);
+    --link-hover-color: var(--primary-color-dark);
+
+    --navbar-bg-color: #0e1111;
+    --navbar-text-color: #e6f7f8;
+
+    --footer-bg-color: #0e1111;
+    --footer-text-color: #e6f7f8;
+
+    --button-bg-color: var(--primary-color);
+    --button-text-color: #0e1111;
+  }
+}
