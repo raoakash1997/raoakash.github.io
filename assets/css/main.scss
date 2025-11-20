@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // Dimensions
-$max-content-width: 1100px; // static fallback replacing Liquid variable
+$max-content-width: 1100px; // static fallback; adjust in variables if needed
 
 @import
   "variables",
