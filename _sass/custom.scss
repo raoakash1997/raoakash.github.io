@@ -43,3 +43,153 @@
     --button-text-color: #0e1111;
   }
 }
+
+/* --- Custom overrides: shrink social icons --- */
+.social {
+  .contact-icons {
+    /* shrink overall font-size controlling icon fonts */
+    font-size: 2.2rem; /* was 4rem */
+
+    a {
+      img {
+        width: 1.8rem; /* was 3.2rem */
+        height: 1.8rem; /* was 3.2rem */
+        margin-bottom: 0.6rem; /* was 1rem */
+      }
+
+      svg {
+        width: 2rem; /* was 3.5rem */
+        height: 2.2rem; /* was 4rem */
+        margin-bottom: 0.4rem; /* was 0.5rem */
+
+        image {
+          width: 2rem; /* was 3.5rem */
+          height: 2rem; /* was 3.5rem */
+        }
+      }
+
+      /* tighten spacing between inline font icons */
+      i {
+        &::before {
+          /* scale down pseudo-element if needed */
+          font-size: 0.55em; /* relative to 2.2rem parent - adjust if still large */
+        }
+      }
+    }
+  }
+}
+
+// --- Global heading capitalization override ---
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+}
+
+// If you need full uppercase instead, switch to:
+// h1, h2, h3, h4, h5, h6 { text-transform: uppercase; }
+
+// --- Profile layout enhancements ---
+.post > article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post > article .profile {
+  /* Put image on left consistently */
+  order: 0;
+  max-width: 320px; /* enlarge compared to ~30% */
+  flex: 0 0 320px;
+}
+
+@media (min-width: 768px) {
+  .post > article .profile {
+    max-width: 360px;
+    flex: 0 0 360px;
+  }
+}
+
+.post > article .clearfix {
+  /* Content beside image */
+  flex: 1 1 auto;
+  min-width: 240px;
+}
+
+.profile.float-left, .profile.float-right {
+  /* neutralize float when flex applied */
+  float: none !important;
+  margin: 0 1.5rem 1rem 0;
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.profile-quote {
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin: 0.5rem 0 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--global-card-bg-color);
+  border-left: 4px solid var(--global-theme-color);
+  border-radius: 4px;
+}
+
+// --- About page sectional styling ---
+.about-section {
+  margin-bottom: 1.75rem;
+}
+
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-intro .profile {
+  margin-bottom: 1rem;
+}
+
+.about-intro .clearfix {
+  padding-top: 0.25rem;
+}
+
+.about-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--global-divider-color), transparent);
+  margin: 2rem 0 1.5rem;
+}
+
+.about-name {
+  font-weight: 800; /* heavier than existing font-weight-bold */
+  color: var(--global-theme-color);
+  position: relative;
+  display: inline-block;
+  padding-right: 0.15em;
+}
+
+.about-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.08em;
+  height: 0.35em;
+  width: 100%;
+  background: linear-gradient(90deg, var(--global-theme-color) 0%, var(--global-hover-color) 100%);
+  opacity: 0.18;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+/* Dark theme tweak for better contrast */
+html[data-theme="dark"] .about-name::after {
+  opacity: 0.25;
+}
+
+.no-posts-msg {
+  font-style: italic;
+  color: var(--global-text-color-light);
+  padding: 0.5rem 0;
+  margin: 0;
+}
