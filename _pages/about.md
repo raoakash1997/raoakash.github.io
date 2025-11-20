@@ -9,7 +9,7 @@ profile:
   image: prof_pic_2.jpg
   image_circular: false
 
-quote: "Runs on coffee and curiosity to design algorithms held together by heuristics, questionable cluster configurations and hope."
+quote: "Powered by curiosity, caffeine, and the occasional correct intuition."
 
 selected_papers: true
 social: true
